@@ -1,0 +1,27 @@
+body {
+    background-color: red;
+}
+
+p {
+    color: white;
+}
+
+p.importante-2 {
+    color: blue;
+    background-color: white;
+}
+
+p.importante {
+    color: red;
+    background-color: white;
+}
+
+#super-importante {
+    color: black;
+    font-weight: bold;
+}
+
+#parrafo-5{
+    color: black;
+    background-color: white;
+}
