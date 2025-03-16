@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1 - Calculadora de promedio de notas</title>
+</head>
+<body>
+    <!-- crear inputs donde podamos poner números y calcular el promedio y mostrarlo -->
+
+    <form id="form-notas">
+        <h1>Calcular promedio de notas</h1>
+        <input type="number" placeholder="Ingresa una nota" class="nota" />
+        <input type="number" placeholder="Ingresa una nota" class="nota" />
+        <input type="number" placeholder="Ingresa una nota" class="nota" />
+        <input type="number" placeholder="Ingresa una nota" class="nota" />
+        <input type="number" placeholder="Ingresa una nota" class="nota" />
+
+        <button id="calcular-promedio-notas">Calcula el promedio de tus notas</button>
+
+        <p>El promedio de tus notas es <span id="resultado-promedio-notas"><!-- --></span></p>
+    </form>
+
+    <form id="form-asistencias">
+        <h1>Calcular promedio de asitencias este trimestre</h1>
+        <input type="number" placeholder="Ingresa asistencias del trimestre" class="asistencia" />
+        <input type="number" placeholder="Ingresa asistencias del trimestre" class="asistencia" />
+        <input type="number" placeholder="Ingresa asistencias del trimestre" class="asistencia" />
+        <input type="number" placeholder="Ingresa asistencias del trimestre" class="asistencia" />
+        <input type="number" placeholder="Ingresa asistencias del trimestre" class="asistencia" />
+
+        <button id="calcular-promedio-asistencias">Calcula el promedio de tus asistencias</button>
+
+        <p>El promedio de tus asistencias es <span id="resultado-promedio-asistencias"><!-- --></span></p>
+    </form>
+
+    <script src="tarea.js"></script>
+</body>
+</html>
