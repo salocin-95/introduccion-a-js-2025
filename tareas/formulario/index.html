@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de transferencia</title>
+</head>
+<body>
+    
+    <form>
+        <label for="cuenta-desde">Desde qué cuenta</label>
+        <select id="cuenta-desde">
+            <!-- <option value="1">Cuenta A ($100)</option>
+            <option value="2">Cuenta B</option>
+            <option value="3">Cuenta C</option> -->
+        </select>
+
+        <label for="cuenta-hacia">Hacia qué cuenta</label>
+        <select id="cuenta-hacia">
+            <!-- <option value="1">Cuenta A</option>
+            <option value="2">Cuenta B</option>
+            <option value="3">Cuenta C</option> -->
+        </select>
+
+        <label for="monto">Monto</label>
+        <input type="number" id="monto"/>
+
+        <label for="descripcion">Descripción</label>
+        <input type="text" id="descripcion"/>
+
+        <input type="submit" value="Transferir" />
+    </form>
+
+    <script type="text/javascript" src="cuentas.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
