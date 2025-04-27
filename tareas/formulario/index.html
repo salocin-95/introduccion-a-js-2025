@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de transferencia</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     
@@ -14,6 +19,7 @@
             <option value="2">Cuenta B</option>
             <option value="3">Cuenta C</option> -->
         </select>
+        <p class="error" id="cuenta-desde-error"><!-- --></p>
 
         <label for="cuenta-hacia">Hacia qué cuenta</label>
         <select id="cuenta-hacia">
@@ -21,19 +27,22 @@
             <option value="2">Cuenta B</option>
             <option value="3">Cuenta C</option> -->
         </select>
+        <p class="error" id="cuenta-hacia-error"><!-- --></p>
 
         <label for="monto">Monto</label>
         <input type="number" id="monto"/>
+        <p class="error" id="monto-error"><!-- --></p>
 
         <label for="descripcion">Descripción</label>
         <input type="text" id="descripcion"/>
+        <p class="error" id="descripcion-error"><!-- --></p>
 
         <input type="submit" value="Transferir" />
-
-        <div id="errores">
-            <!-- -->
-        </div>
     </form>
+
+    <div id="errores" class="error">
+        <!-- -->
+    </div>
 
     <script type="text/javascript" src="cuentas.js"></script>
     <script type="text/javascript" src="index.js"></script>
