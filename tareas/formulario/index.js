@@ -5,35 +5,51 @@ document.addEventListener('DOMContentLoaded', function(){
 document.querySelector('form').addEventListener('submit', function(event){
     event.preventDefault();
 
-    // ver de qué cuenta a qué cuenta (de qué ID a qué ID)
+    limpiarErrores();
+
     const cuentaDesdeId = document.querySelector('#cuenta-desde').value;
     const cuentaHaciaId = document.querySelector('#cuenta-hacia').value;
     
-    // encontrar la cuenta DESDE con el ID que me pasaron (el que tiene el <select>)
     const cuentaDesde = encontrarCuentaPorId(cuentaDesdeId);
     const cuentaHacia = encontrarCuentaPorId(cuentaHaciaId);
 
     const montoSolicitado = Number(document.querySelector('#monto').value);
 
-    // verificar que no se transfiera entre mismas cuentas
     if(cuentaDesde.id === cuentaHacia.id){
-        console.log('No se puede transferir entre mismas cuentas');
+        mostrarError('No se puede transferir entre mismas cuentas');
         return false;
     }
 
-    // verificar que el monto sea mayor a 0
     if(montoSolicitado <= 0){
-        console.log('Ingrese un monto mayor a 0');
+        mostrarError('Ingrese un monto mayor a 0');
         return false;
     }
 
-    // verificar que el saldo disponible es >= al monto solicitado
+    const descripcion = document.querySelector('#descripcion').value;
+    const regexDescripcion = /^[a-z0-9 ]{3,}$/i;
+    if(!regexDescripcion.test(descripcion.trim())){
+        mostrarError('La descripción debe contener sólo letras y números y al menos 3 caracteres');
+        return false;
+    }
+
     if(cuentaDesde.saldo >= montoSolicitado){
-        console.log('la transferencia se puede hacer');
+        alert('Transferencia realizada!');
     }else{
-        console.log('la transferencia NO se puede hacer, saldo insuficiente.');
+        mostrarError('la transferencia NO se puede hacer, saldo insuficiente');
+        return false;
     }
 });
+
+function limpiarErrores(){
+    const $errores = document.querySelector('#errores');
+    $errores.innerHTML = '';
+}
+
+
+function mostrarError(error){
+    const $errores = document.querySelector('#errores');
+    $errores.innerHTML = `<p>${error}</p>`;
+}
 
 function mostrarCuentas(){
     const $cuentasDesde = document.querySelector('#cuenta-desde');
